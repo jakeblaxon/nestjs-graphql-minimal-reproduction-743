@@ -1,0 +1,14 @@
+type Query {
+  geocode(address: String!): Geocode
+  geocodes(addresses: [String!]!): [Geocode]!
+}
+
+type Geocode @key(fields: "address") {
+  address: String!
+  location: Location
+}
+
+type Location {
+  latitude: Float!
+  longitude: Float!
+}
